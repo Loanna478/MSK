@@ -55,7 +55,7 @@ export default function Product() {
             const body = {
                 name: product.product_name,
                 quantity: 1,
-                amount: Math.round(product.product_price * 100), // Ensure this is in cents
+                amount: Math.round(product.product_price * 100), // En centimes
                 image: product.product_image
             };
             const response = await fetch('http://localhost:8081/create-checkout-session', {
@@ -65,19 +65,24 @@ export default function Product() {
                 },
                 body: JSON.stringify(body)
             });
-
+    
             const session = await response.json();
-
+    
             if (response.status !== 200) {
-                throw new Error(session.error || 'An error occurred while creating the checkout session');
+                throw new Error(session.error || 'Une erreur est survenue lors de la création de la session de paiement');
             }
-
+    
             const stripe = await loadStripe('pk_test_51NPWG4BgKdjLeKvpQuAx66vPxzbRcbJaAReFn2XqEFSvozr8QP0TShnVrgQRrWEIlNnzepXGwxIC1LuD1m9Mglz30017tY1jhf');
-
+    
+            // Vérifiez que stripe n'est pas null
+            if (!stripe) {
+                throw new Error('Stripe failed to initialize.');
+            }
+    
             const result = await stripe.redirectToCheckout({
                 sessionId: session.sessionId
             });
-
+    
             if (result.error) {
                 throw new Error(result.error.message);
             }
