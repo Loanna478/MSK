@@ -4,6 +4,8 @@ import Particles from "@/components/particles";
 import Navbar from "@/components/navbar";
 import Button from "@/components/button";
 import { useState, useEffect } from "react";
+import Image from 'next/image';
+
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -37,11 +39,11 @@ export default function Home() {
     
     
             <div className="absolute top-0 left-0 rotate-180 -translate-x-3/4 -scale-x-100 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
-                <img src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none" width="852" height="582" alt="Illustration" />
+                <Image src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none" width="852" height="582" alt="Illustration" />
             </div>
     
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
-                <img src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none w-full h-auto" alt="Illustration" />
+                <Image src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none w-full h-auto" alt="Illustration" />
             </div>
 
 
@@ -51,7 +53,7 @@ export default function Home() {
                     products.map(product => (
                         <a href={`/pages/product/${product.product_id}`} className="rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300 bg-slate-800" key={product.product_id}>
                             <div className="rounded-lg p-6">
-                                <img src={product.product_image} alt={product.product_name} className="h-48 w-full object-cover rounded-md mb-4" />
+                                <Image src={product.product_image} alt={product.product_name} className="h-48 w-full object-cover rounded-md mb-4" />
                                 <h2 className="text-xl text-white-800 font-bold">{product.product_name}</h2>
                                 <p className="text-lg font-bold mt-2"> €{product.product_price.toFixed(2)}</p>
                             </div>

@@ -5,6 +5,8 @@ import Navbar from "@/components/navbar";
 import Button from "@/components/button";
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, useEffect } from "react";
+import Image from 'next/image';
+
 
 export default function Product() {
     const [products, setProducts] = useState([]);
@@ -92,7 +94,7 @@ export default function Product() {
 
             {products.map(product => (
                 <div key={product.id} className="flex justify-between text-white p-6">
-                    <img src={product.product_image} alt={product.product_name} className="h-97 w-1/3 object-cover rounded-md" />
+                    <Image src={product.product_image} alt={product.product_name} className="h-97 w-1/3 object-cover rounded-md" />
                     <div className="flex flex-col text-white flex-grow" style={{ paddingLeft: "20px" }}>
                         <h1 className="font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">{product.product_name}</h1>
                         <p className="text-lg font-bold mt-2">${product.product_price.toFixed(2)}</p>
@@ -113,10 +115,10 @@ export default function Product() {
             ))}
             <Particles className="absolute inset-0 pointer-events-none" quantity={50} />
             <div className="absolute top-0 left-0 rotate-180 -translate-x-3/4 -scale-x-100 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
-                <img src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none" width={852} height={582} alt="Illustration" />
+                <Image src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none" width={852} height={582} alt="Illustration" />
             </div>
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
-                <img src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none w-full h-auto" alt="Illustration" />
+                <Image src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none w-full h-auto" alt="Illustration" />
             </div>
         </div>
     );

@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import MousePosition from './mouse-position'
+import Image from 'next/image';
 
 
 interface ParticlesProps {
