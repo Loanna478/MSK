@@ -2,13 +2,22 @@
 
 import Particles from "@/components/particles";
 import Navbar from "@/components/navbar";
-import Button from "@/components/button";
+import Button from "@/components/button"; // If unused, consider removing it.
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 
+interface Product {
+    id: string; // Assuming there's an ID for the product
+    product_name: string;
+    product_price: number; // Ensure this exists
+    product_image: string; // Ensure this exists
+    product_description: string; // Ensure this exists
+    product_quantity: number; // Ensure this exists
+}
+
 export default function Product() {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<Product[]>([]);
     const [productsID, setProductsID] = useState<string | undefined>("");
 
     useEffect(() => {
@@ -41,17 +50,12 @@ export default function Product() {
         fetchProducts();
     }, [productsID]);
 
-    interface Product {
-        product_name: string;
-        // add other fields as necessary
-      }
-
     const handleCheckout = async (product: Product) => {
         try {
             const body = {
                 name: product.product_name,
                 quantity: 1,
-                amount: Math.round(product.product_price * 100), // Assurez-vous que c'est en centimes
+                amount: Math.round(product.product_price * 100), // Ensure this is in cents
                 image: product.product_image
             };
             const response = await fetch('http://localhost:8081/create-checkout-session', {
@@ -65,7 +69,7 @@ export default function Product() {
             const session = await response.json();
 
             if (response.status !== 200) {
-                throw new Error(session.error || 'Une erreur est survenue lors de la création de la session de paiement');
+                throw new Error(session.error || 'An error occurred while creating the checkout session');
             }
 
             const stripe = await loadStripe('pk_test_51NPWG4BgKdjLeKvpQuAx66vPxzbRcbJaAReFn2XqEFSvozr8QP0TShnVrgQRrWEIlNnzepXGwxIC1LuD1m9Mglz30017tY1jhf');
@@ -98,7 +102,7 @@ export default function Product() {
 
             {products.map(product => (
                 <div key={product.id} className="flex justify-between text-white p-6">
-                    <Image  src={product.product_image} alt={product.product_name} className="h-97 w-1/3 object-cover rounded-md" />
+                    <Image src={product.product_image} alt={product.product_name} className="h-97 w-1/3 object-cover rounded-md" width={500} height={300} />
                     <div className="flex flex-col text-white flex-grow" style={{ paddingLeft: "20px" }}>
                         <h1 className="font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">{product.product_name}</h1>
                         <p className="text-lg font-bold mt-2">${product.product_price.toFixed(2)}</p>
