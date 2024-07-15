@@ -30,7 +30,7 @@ export default function Product() {
 
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:8081/getproductbyid', {
+                const response = await fetch('http://92.158.105.84:8081/getproductbyid', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export default function Product() {
                 amount: Math.round(product.product_price * 100), // En centimes
                 image: product.product_image
             };
-            const response = await fetch('http://localhost:8081/create-checkout-session', {
+            const response = await fetch('http://92.158.105.84:8081/create-checkout-session', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

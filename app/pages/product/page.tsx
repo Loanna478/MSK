@@ -19,7 +19,7 @@ export default function Home() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:8081/getproduct');
+                const response = await fetch('http://92.158.105.84:8081/getproduct');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
