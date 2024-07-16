@@ -56,6 +56,22 @@ export default function Home() {
                     <p className="text-white">Loading products...</p>
                 )}
             </div>
+
+            <div className="absolute top-0 left-0 rotate-180 -translate-x-3/4 -scale-x-100 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
+                <Image  src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg" className="max-w-none" width="852" height="582" alt="Illustration" />
+            </div>
+
+            <div
+                className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-70 pointer-events-none "
+                aria-hidden="true"
+            >
+                <Image 
+                src="https://cruip-tutorials.vercel.app/particle-animation/shape.svg"
+                className="max-w-none w-full h-auto"
+                alt="Illustration"
+                />
+            </div>
+
         </div>
     );
 }
