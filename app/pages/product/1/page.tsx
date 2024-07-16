@@ -52,9 +52,8 @@ export default function Product() {
 
     const handleCheckout = async (product: Product) => {
         try {
-            console.log(product.id);
             const body = {
-                id : product.id,
+                id : productsID,
                 name: product.product_name,
                 quantity: 1,
                 amount: Math.round(product.product_price * 100), // En centimes
