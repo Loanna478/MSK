@@ -24,8 +24,8 @@ export default function Home() {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                console.log(data);
                 setProducts(data);
+                console.log(products);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
