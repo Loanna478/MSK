@@ -25,7 +25,6 @@ export default function Home() {
                 }
                 const data = await response.json();
                 setProducts(data);
-                console.log(products);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
@@ -47,7 +46,7 @@ export default function Home() {
                     products.map(product => (
                         <a href={`/pages/product/${product.product_id}`} className="rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300 bg-slate-800" key={product.product_id}>
                             <div className="rounded-lg p-6">
-                                <Image src={product.product_image} alt={product.product_name} className="h-48 w-full object-cover rounded-md mb-4" />
+                                <img src={product.product_image} alt={product.product_name} className="h-48 w-full object-cover rounded-md mb-4" />
                                 <h2 className="text-xl text-white-800 font-bold">{product.product_name}</h2>
                                 <p className="text-lg font-bold mt-2">€{product.product_price.toFixed(2)}</p>
                             </div>

@@ -108,7 +108,7 @@ export default function Product() {
 
             {products.map(product => (
                 <div key={product.id} className="flex justify-between text-white p-6">
-                    <Image src={product.product_image} alt={product.product_name} className="h-97 w-1/3 object-cover rounded-md" width={500} height={300} />
+                    <img src={product.product_image} alt={product.product_name} className="h-97 w-1/3 object-cover rounded-md" width={500} height={300} />
                     <div className="flex flex-col text-white flex-grow" style={{ paddingLeft: "20px" }}>
                         <h1 className="font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">{product.product_name}</h1>
                         <p className="text-lg font-bold mt-2">${product.product_price.toFixed(2)}</p>
