@@ -23,20 +23,20 @@ export default function Home() {
         product_quantity: ''
     });
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const response = await fetch('http://92.158.105.84:8081/getproduct');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setProducts(data);
-            } catch (error) {
-                console.error('Error fetching products:', error);
+    const fetchProducts = async () => {
+        try {
+            const response = await fetch('http://92.158.105.84:8081/getproduct');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        };
+            const data = await response.json();
+            setProducts(data);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    };
 
+    useEffect(() => {
         fetchProducts();
     }, []);
 
