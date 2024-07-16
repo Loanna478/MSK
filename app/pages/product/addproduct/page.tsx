@@ -40,7 +40,7 @@ export default function Home() {
         fetchProducts();
     }, []);
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setNewProduct({ ...newProduct, [name]: value });
     };
