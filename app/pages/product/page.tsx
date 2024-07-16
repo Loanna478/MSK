@@ -36,7 +36,7 @@ export default function Home() {
     return (
         <div className="relative min-h-screen flex flex-col bg-slate-900 overflow-hidden font-inter antialiased">
             <Navbar/>
-            <Particles className="absolute inset-0 pointer-events-none" quantity={50} />
+            <Particles className="absolute inset-0 pointer-events-none" quantity={100} />
             <div className="flex flex-col items-center justify-center text-white flex-grow mt-36">
                 <h1 className="font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">ALL PRODUCT</h1>
             </div>
