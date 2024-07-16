@@ -20,7 +20,7 @@ export default function Home() {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
-                <img src="/path/to/your/loading-logo.png" alt="Loading..." className="animate-spin h-16 w-16" />
+                <img src="https://cdn0.iconfinder.com/data/icons/basic-ui-42/24/REFRESH_1-512.png" alt="Loading..." className="animate-spin h-16 w-16" />
             </div>
         );
     }
