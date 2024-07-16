@@ -53,6 +53,7 @@ export default function Product() {
     const handleCheckout = async (product: Product) => {
         try {
             const body = {
+                id : product.id,
                 name: product.product_name,
                 quantity: 1,
                 amount: Math.round(product.product_price * 100), // En centimes
