@@ -52,6 +52,7 @@ export default function Product() {
 
     const handleCheckout = async (product: Product) => {
         try {
+            console.log(product.id);
             const body = {
                 id : product.id,
                 name: product.product_name,
