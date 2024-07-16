@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Home() {
 
     return (
-        <div className="relative min-h-screen flex flex-col bg-slate-900 overflow-hidden font-inter antialiased">
+        <div className="relative min-h-screen flex flex-col justify-center bg-slate-900 overflow-hidden relative font-inter antialiased">
             <Navbar />
             <Particles className="absolute inset-0 pointer-events-none" quantity={100} />
             <center className="text-white">
