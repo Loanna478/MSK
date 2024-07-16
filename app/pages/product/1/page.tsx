@@ -107,13 +107,6 @@ export default function Product() {
                 </nav>
             </div>
 
-            <div className="relative h-[250px]  overflow-hidden hover:scale-105 duration-300">
-                <a href="https://crunchyscan.fr/lecture-en-ligne/the-most-heretical-last-boss-queen-who-will-become-the-source-of-tragedy-will-devote-herself-for-the-sake-of-the-people-comic-anthology" className="manga_cover ">
-                    <img data-src="https://crunchyscan.fr/upload/manga/the-most-heretical-last-boss-queen-who-will-become-the-source-of-tragedy-will-devote-herself-for-the-sake-of-the-people-comic-anthology/cover.jpg?1721162550" alt="The Most Heretical Last Boss Queen Who Will Become the Source of Tragedy Will Devote Herself for the Sake of the People. Comic Anthology" className="w-full h-full rounded object-cover object-top skeleton ls-is-cached lazyloaded" src="https://crunchyscan.fr/upload/manga/the-most-heretical-last-boss-queen-who-will-become-the-source-of-tragedy-will-devote-herself-for-the-sake-of-the-people-comic-anthology/cover.jpg?1721162550"/>
-                </a>
-                <p className="tag bg-[#82af42] font-bold rounded absolute p-1 top-2 left-2 drop-shadow-2xl text-xs pl-4 pr-4">MANGA</p>
-                
-            </div>
 
             {products.map(product => (
                 <div key={product.id} className="flex justify-between text-white p-6">
