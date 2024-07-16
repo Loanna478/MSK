@@ -24,7 +24,6 @@ export default function Product() {
         const id = window.location.pathname.split("/").pop();
         setProductsID(id);
     }, []);
-
     useEffect(() => {
         if (!productsID) return;
 
@@ -88,6 +87,7 @@ export default function Product() {
                 throw new Error(result.error.message);
             }
         } catch (error) {
+            alert('Error creating checkout session:', error);
             console.error('Error creating checkout session:', error);
         }
     };
