@@ -10,6 +10,7 @@ interface Product {
     product_id: string;  // Assurez-vous que ce type correspond à votre structure de données
     product_name: string;
     product_price: number;
+    product_quantity : number;
     product_image: string;
 }
 
@@ -49,6 +50,7 @@ export default function Home() {
                                 <img src={product.product_image} alt={product.product_name} className="h-48 w-full object-cover rounded-md mb-4" />
                                 <h2 className="text-xl text-white-800 font-bold">{product.product_name}</h2>
                                 <p className="text-lg font-bold mt-2">€{product.product_price.toFixed(2)}</p>
+                                <p className="text-gray-500 text-sm" >Quantity: {product.product_quantity}</p>
                             </div>
                         </a>
                     ))
