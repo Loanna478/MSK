@@ -1,3 +1,4 @@
+// Route pour créer une session de paiement
 "use client";
 
 import Particles from "@/components/particles";
@@ -24,7 +25,6 @@ export default function Product() {
         const id = window.location.pathname.split("/").pop();
         setProductsID(id);
     }, []);
-
     useEffect(() => {
         if (!productsID) return;
 
@@ -52,8 +52,8 @@ export default function Product() {
 
     const handleCheckout = async (product: Product) => {
         try {
-                        const body = {
-                id : product.id,
+            const body = {
+                id : productsID,
                 name: product.product_name,
                 quantity: 1,
                 amount: Math.round(product.product_price * 100), // En centimes
@@ -88,10 +88,10 @@ export default function Product() {
                 throw new Error(result.error.message);
             }
         } catch (error) {
+            alert('Error creating checkout session: ' + error);
             console.error('Error creating checkout session:', error);
         }
     };
-    
 
     return (
         <div className="relative min-h-screen flex flex-col bg-slate-900 overflow-hidden font-inter antialiased">
@@ -106,6 +106,7 @@ export default function Product() {
                     ))}
                 </nav>
             </div>
+
 
             {products.map(product => (
                 <div key={product.id} className="flex justify-between text-white p-6">
