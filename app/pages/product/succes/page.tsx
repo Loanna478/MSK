@@ -4,7 +4,7 @@ import Particles from "@/components/particles";
 import Navbar from "@/components/navbar";
 import { useState, useEffect } from "react";
 import Button from "@/components/button";
-import 'ldrs/quantum';
+import 'ldrs/quantum'
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
