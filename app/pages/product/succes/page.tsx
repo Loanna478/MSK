@@ -1,34 +1,34 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Particles from "@/components/particles";
 import Navbar from "@/components/navbar";
-import { useState, useEffect } from "react";
 import Button from "@/components/button";
-import { quantum } from 'ldrs'
+import { quantum } from 'ldrs';
 
+// Register the loader component from ldrs
+quantum.register();
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
-    quantum.register()
+
     useEffect(() => {
-        // Simule un chargement de 3 secondes
+        // Simulate a loading period of 3 seconds
         const timer = setTimeout(() => {
-            
             setLoading(false);
         }, 3000);
-        
+
         return () => clearTimeout(timer);
     }, []);
 
     if (loading) { 
-
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
-                {/* <Particles className="absolute inset-0 pointer-events-none" quantity={100} /> */}
+                {/* Loader from ldrs */}
                 <l-quantum
-                size="45"
-                speed="1.75" 
-                color="black" 
+                    size="45"
+                    speed="1.75" 
+                    color="black" 
                 ></l-quantum>
             </div>
         );
