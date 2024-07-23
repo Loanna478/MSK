@@ -18,7 +18,7 @@ export default function Home() {
         return () => clearTimeout(timer);
     }, []);
 
-    if (loading) {
+    if (loading) { 
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
                 <Particles className="absolute inset-0 pointer-events-none" quantity={100} />
