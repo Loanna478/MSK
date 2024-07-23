@@ -21,7 +21,7 @@ export default function Home() {
     if (loading) { 
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
-                <Particles className="absolute inset-0 pointer-events-none" quantity={100} />
+                {/* <Particles className="absolute inset-0 pointer-events-none" quantity={100} /> */}
                 <l-quantum size="45" speed="1.75" color="black"></l-quantum>
             </div>
         );
