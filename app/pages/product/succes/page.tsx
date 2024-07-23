@@ -7,15 +7,13 @@ import Button from "@/components/button";
 import { quantum } from 'ldrs'
 
 
-
-
 export default function Home() {
     const [loading, setLoading] = useState(true);
     quantum.register()
-
     useEffect(() => {
         // Simule un chargement de 3 secondes
         const timer = setTimeout(() => {
+            
             setLoading(false);
         }, 3000);
         
@@ -23,6 +21,7 @@ export default function Home() {
     }, []);
 
     if (loading) { 
+
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
                 {/* <Particles className="absolute inset-0 pointer-events-none" quantity={100} /> */}
