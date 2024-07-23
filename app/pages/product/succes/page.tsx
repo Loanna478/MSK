@@ -38,7 +38,7 @@ export default function Home() {
                 </div>
             </center>
 
-            <Button href="http://http://mshop.ovh/">Back to Home</Button>
+            <Button href="http://mshop.ovh/.ovh/">Back to Home</Button>
         </div>
     );
 }

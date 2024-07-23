@@ -99,8 +99,8 @@ export default function Product() {
 
             <div className="nav-shop">
                 <nav className="woocommerce-breadcrumb" aria-label="Breadcrumb">
-                    <a href="http://http://mshop.ovh/">Home</a>&nbsp;/&nbsp;
-                    <a href="http://http://mshop.ovh/pages/product">Product</a>&nbsp;/&nbsp;
+                    <a href="http://mshop.ovh/.ovh/">Home</a>&nbsp;/&nbsp;
+                    <a href="http://mshop.ovh/.ovh/pages/product">Product</a>&nbsp;/&nbsp;
                     {products.map(product => (
                         <span key={product.id} className="breadcrumb_last" aria-current="page">{product.product_name}</span>
                     ))}
