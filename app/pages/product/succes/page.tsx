@@ -1,13 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Particles from "@/components/particles";
 import Navbar from "@/components/navbar";
 import Button from "@/components/button";
-
-// Dynamically import the l-quantum component to be used only on the client side
-const QuantumLoader = dynamic(() => import('ldrs').then(mod => mod.quantum), { ssr: false });
+import QuantumLoader from "@/components/QuantumLoader";
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
@@ -25,13 +22,7 @@ export default function Home() {
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
                 {/* Loader from ldrs */}
-                {QuantumLoader && (
-                    <l-quantum
-                        size="45"
-                        speed="1.75" 
-                        color="black" 
-                    ></l-quantum>
-                )}
+                <QuantumLoader />
             </div>
         );
     }
