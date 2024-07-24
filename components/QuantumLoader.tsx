@@ -4,8 +4,8 @@ import { useEffect } from "react";
 const QuantumLoader = () => {
   useEffect(() => {
     import('ldrs').then((ldrs) => {
-      const { quantum } = ldrs;
-      quantum.register();
+      const { hourglass } = ldrs;
+      hourglass.register();
     });
   }, []);
 
