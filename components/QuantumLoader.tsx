@@ -9,7 +9,7 @@ const QuantumLoader = () => {
     });
   }, []);
 
-  return <l-quantum size="45" speed="1.75" color="white"></l-quantum>;
+  return <l-hourglass size="45" speed="1.75" color="white"></l-hourglass>;
 };
 
 export default QuantumLoader;
