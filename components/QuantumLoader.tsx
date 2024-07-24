@@ -4,12 +4,12 @@ import { useEffect } from "react";
 const QuantumLoader = () => {
   useEffect(() => {
     import('ldrs').then((ldrs) => {
-      const { hourglass } = ldrs;
-      hourglass.register();
+      const { waveform } = ldrs;
+      waveform.register();
     });
   }, []);
 
-  return <l-hourglass size="45" speed="1.75" color="white"></l-hourglass>;
+  return <l-waveform size="45" speed="1.75" color="white"></l-waveform>;
 };
 
 export default QuantumLoader;
