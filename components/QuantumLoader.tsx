@@ -9,7 +9,7 @@ const QuantumLoader = () => {
     });
   }, []);
 
-  return <l-quantum size="45" speed="1.75" color="black"></l-quantum>;
+  return <l-quantum size="45" speed="1.75" color="blue"></l-quantum>;
 };
 
 export default QuantumLoader;
