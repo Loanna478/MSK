@@ -22,6 +22,7 @@ export default function Home() {
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-900">
                 {/* Loader from ldrs */}
+                <Particles className="absolute inset-0 pointer-events-none" quantity={100} />
                 <QuantumLoader />
             </div>
         );
