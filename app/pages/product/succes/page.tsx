@@ -10,10 +10,10 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Simulate a loading period of 3 and 5 seconds
+        // Simulate a loading period of 3 
         const timer = setTimeout(() => {
             setLoading(false);
-        }, Math.floor(Math.random() * 2000) + 3000);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, []);
